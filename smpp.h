@@ -1,11 +1,11 @@
 /*!
- * \file libsmpp.h
+ * \file smpp.h
  * \author ichramm
  *
  * This header exposes the plain C API
  */
-#ifndef libsmpp_h__
-#define libsmpp_h__
+#ifndef OPENSMPP_SMPP_H__
+#define OPENSMPP_SMPP_H__
 #if _MSC_VER > 1000
 #pragma once
 #endif
@@ -483,4 +483,4 @@ SMPP_API DeliveryResult libSMPP_ClientSendMessage (
 }
 #endif
 
-#endif // libsmpp_h__
+#endif // OPENSMPP_SMPP_H__

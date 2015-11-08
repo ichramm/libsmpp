@@ -2,8 +2,8 @@
  * \file smppdefs.h
  * \author ichramm
  */
-#ifndef smppdefs_h_
-#define smppdefs_h_
+#ifndef OPENSMPP_SMPPDEFS_H__
+#define OPENSMPP_SMPPDEFS_H__
 
 #define SMPP_HEADER_SIZE	16
 
@@ -207,5 +207,5 @@ enum MessagePriority
 //const char *bindresult2str(BindResult b);
 //const char *bindmode2str(BindMode m);
 
-#endif	/* smppdefs_h_ */
+#endif	/* OPENSMPP_SMPPDEFS_H__ */
 

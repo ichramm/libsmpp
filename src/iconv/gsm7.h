@@ -19,8 +19,8 @@
  *
  * This file was contributed by Jeroen @ Mobile Tidings (http://mobiletidings.com)
  */
-#ifndef gsm7_h__
-#define gsm7_h__
+#ifndef OPENSMPP_ICONV_GSM7_H__
+#define OPENSMPP_ICONV_GSM7_H__
 
 /* Our own notion of wide character, as UCS-4, according to ISO-10646-1. */
 typedef unsigned int ucs4_t;
@@ -70,4 +70,4 @@ int gsm7_wctomb (unsigned char *r, ucs4_t wc, int n);
 #endif
 
 
-#endif // gsm7_h__
+#endif // OPENSMPP_ICONV_GSM7_H__

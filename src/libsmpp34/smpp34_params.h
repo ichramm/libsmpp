@@ -20,8 +20,8 @@
  * Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
  */
-#ifndef _TEST_PARAM_H_
-#define _TEST_PARAM_H_
+#ifndef OPENSMPP_LIBSMPP34_SMPP34_PARAMS_H__
+#define OPENSMPP_LIBSMPP34_SMPP34_PARAMS_H__
 
 #if defined(__cplusplus) && !defined(_MSC_VER)
 extern "C"
@@ -56,4 +56,4 @@ char *nothing( uint32_t var, char *buff );
 }
 #endif
 
-#endif
+#endif // OPENSMPP_LIBSMPP34_SMPP34_PARAMS_H__

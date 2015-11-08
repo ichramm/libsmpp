@@ -9,10 +9,10 @@
 # undef SendMessage
 #endif
 
-#include "smppserver.h"
 #include "smppdefs.h"
-#include "smppcommands.h"
-#include "smppusersmanager.h"
+#include "smppserver.hpp"
+#include "smppcommands.hpp"
+#include "smppusersmanager.hpp"
 #include "logger.h"
 #include <boost/lexical_cast.hpp>
 #include <vector>
@@ -28,7 +28,7 @@
 using namespace std;
 using namespace boost;
 
-namespace libsmpp
+namespace opensmpp
 {
 
 CSMPPServerImpl::CSMPPServerImpl(shared_ptr<CSMPPUserManager> userManager, unsigned short port)
@@ -169,7 +169,7 @@ void CSMPPServerImpl::OnConnectionError(SMPPConnectionPtr sender)
 	m_userManager->OnCommand(sender, shared_ptr<ISMPPCommand>());
 }
 
-} // namespace libsmpp
+} // namespace opensmpp
 
 #ifdef _WIN32
 # pragma pop_macro("SendMessage")

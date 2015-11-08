@@ -1,7 +1,7 @@
 /*!
  * \file libsmpp.cpp
  * \author ichramm
- * 
+ *
  */
 #include "stdafx.h"
 
@@ -10,9 +10,9 @@
 # undef SendMessage
 #endif
 
-#include "../libsmpp.hpp"
-#include "smppserver.h"
-#include "smppusersmanager.h"
+#include "../smpp.hpp"
+#include "smppserver.hpp"
+#include "smppusersmanager.hpp"
 #include "logger.h"
 
 #include <boost/make_shared.hpp>
@@ -20,7 +20,7 @@
 using namespace std;
 using namespace boost;
 
-namespace libsmpp
+namespace opensmpp
 {
 
 struct CSMPPServer::pimpl
@@ -182,10 +182,10 @@ private:
 	Callback_OnConnectionLost  m_onConnectionLost;
 };
 
-} // namespace libsmpp
+} // namespace opensmpp
 
 
-using namespace libsmpp;
+using namespace opensmpp;
 
 
 extern "C"

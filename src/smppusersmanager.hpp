@@ -1,21 +1,21 @@
 /*!
- * \file smppusersmanager.h
+ * \file smppusersmanager.hpp
  * \author ichramm
  */
-#ifndef smppusersmanager_h__
-#define smppusersmanager_h__
+#ifndef OPENSMPP_SMPPUSERSMANAGER_HPP__
+#define OPENSMPP_SMPPUSERSMANAGER_HPP__
 #if _MSC_VER > 1000
 #pragma once
 #endif
 
-#include "../libsmpp.hpp"
-#include "smppconnection.h"
+#include "../smpp.hpp"
+#include "smppconnection.hpp"
 #include <boost/thread.hpp>
 #include <boost/thread/condition.hpp>
 #include <boost/enable_shared_from_this.hpp>
 #include <map>
 
-namespace libsmpp
+namespace opensmpp
 {
 	class ISMPPCommand;
 	class CSMPPCallback;
@@ -61,6 +61,6 @@ namespace libsmpp
 		// ENQUIRE_LINK
 		void KeepAliveThread();
 	};
-} // namespace libsmpp
+} // namespace opensmpp
 
-#endif // smppusersmanager_h__
+#endif // OPENSMPP_SMPPUSERSMANAGER_HPP__

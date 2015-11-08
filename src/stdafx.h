@@ -2,8 +2,8 @@
 // or project specific include files that are used frequently, but
 // are changed infrequently
 //
-#ifndef stdafx_h__
-#define stdafx_h__
+#ifndef OPENSMPP_STDAFX_H__
+#define OPENSMPP_STDAFX_H__
 #if _MSC_VER > 1000
   #pragma once
 #endif
@@ -50,4 +50,4 @@
 
 
 
-#endif // stdafx_h__
+#endif // OPENSMPP_STDAFX_H__

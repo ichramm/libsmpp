@@ -171,12 +171,6 @@ namespace esmesim.smpp
 	public unsafe class SMPPClient : IDisposable
 	{
 
-#if(DEBUG)
-		const string LIB_SMPP = "smpp-d";
-#else
-		const string LIB_SMPP = "smpp";
-#endif
-
 		/// <summary>
 		/// Internal structure to handle incoming text messages
 		/// </summary>
@@ -210,69 +204,69 @@ namespace esmesim.smpp
 							 [MarshalAs(UnmanagedType.I4)] int reason
 				  );
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_CreateDefaultMessageSettings(
 			[MarshalAs(UnmanagedType.Struct)] ref MessageSettings ms
 		);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern IntPtr libSMPP_ClientCreate(
 					[MarshalAs(UnmanagedType.FunctionPtr)] Callback_OnIncomingMessage onNewMessage,
 					[MarshalAs(UnmanagedType.FunctionPtr)] Callback_OnConnectionLost onConnectionLost
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern IntPtr libSMPP_ClientDelete(
 					IntPtr hClient
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetServerAddress (
 					IntPtr hClient, string serverIP, ushort serverPort
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetLoginType(
 					IntPtr hClient, BindType loginType
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetSystemId(
 					IntPtr hClient, string systemId
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetSystemType(
 					IntPtr hClient, string systemType
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetPassword(
 					IntPtr hClient, string password
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetAddressRange(
 					IntPtr hClient, string pattern
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientSetMessageSettings(
 					IntPtr hClient,
 					[MarshalAs(UnmanagedType.LPStruct)] MessageSettings ms
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern BindResult libSMPP_ClientBind(
 					IntPtr hClient
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern void libSMPP_ClientUnBind(
 					IntPtr hClient
 			);
 
-		[DllImport(LIB_SMPP, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("opensmpp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		private static extern DeliveryResult libSMPP_ClientSendMessage(
 					IntPtr hClient,
 					string from,

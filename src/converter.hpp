@@ -1,15 +1,15 @@
 /*!
- * \file:   converter.h
+ * \file converter.hpp
  * \author ichramm
  *
  * Created on December 5, 2010, 1:14 AM
  */
-#ifndef converter_h_
-#define converter_h_
+#ifndef OPENSMPP_CONVERTER_HPP_
+#define OPENSMPP_CONVERTER_HPP_
 
 #include <string>
 
-namespace libsmpp
+namespace opensmpp
 {
 	class CConverter
 	{
@@ -26,6 +26,6 @@ namespace libsmpp
 
 		int ConvertInternal(const std::string &src, std::string &dest);
 	};
-} //namespace libsmpp
+} //namespace opensmpp
 
-#endif // converter_h_
+#endif // OPENSMPP_CONVERTER_HPP_

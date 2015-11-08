@@ -1,9 +1,9 @@
 /*!
- * \file smppconnection.h
+ * \file smppconnection.hpp
  * \author ichramm
  */
-#ifndef smppconnection_h__
-#define smppconnection_h__
+#ifndef OPENSMPP_SMPPCONNECTION_HPP_
+#define OPENSMPP_SMPPCONNECTION_HPP_
 #pragma once
 
 
@@ -20,7 +20,7 @@
 #define RESULT_INVRESP    -3
 #define RESULT_SYSERROR   -4
 
-namespace libsmpp
+namespace opensmpp
 {
 	class ISMPPCommand;
 	class CSMPPConnection;
@@ -159,6 +159,6 @@ namespace libsmpp
 		~CSMPPServerConnection();
 	};
 
-} // namespace libsmpp
+} // namespace opensmpp
 
-#endif // smppconnection_h__
+#endif // OPENSMPP_SMPPCONNECTION_HPP_

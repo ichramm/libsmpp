@@ -20,8 +20,8 @@
  * Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
  */
-#ifndef _SMPP_H_
-#define _SMPP_H_
+#ifndef OPENSMPP_LIBSMPP34_SMPP34_H__
+#define OPENSMPP_LIBSMPP34_SMPP34_H__
 
 #if defined(__GNUC__)
  #include <stdint.h>
@@ -269,4 +269,4 @@ typedef struct _TlsInfo
 #define TLVID_its_reply_type              0x1380 /* CDMA */
 #define TLVID_its_session_info            0x1383 /* CDMA */
 
-#endif
+#endif // OPENSMPP_LIBSMPP34_SMPP34_H__

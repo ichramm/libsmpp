@@ -1,14 +1,15 @@
 /*!
- * \file smppserver.h
+ * \file smppserver.hpp
  * \author ichramm
  */
-#ifndef smppserver_h__
-#define smppserver_h__
+#ifndef OPENSMPP_SMPPSERVER_HPP_
+#define OPENSMPP_SMPPSERVER_HPP_
 #if _MSC_VER > 1000
 #pragma once
 #endif
 
-#include "smppconnection.h"
+#include "smppconnection.hpp"
+
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>
 #include <boost/thread/condition.hpp>
@@ -22,7 +23,7 @@
 #define LOGIN_INV_USER   -1
 #define LOGIN_INV_PWD    -2
 
-namespace libsmpp
+namespace opensmpp
 {
 	class ISMPPCommand;
 	class CSMPPUserManager;
@@ -67,6 +68,6 @@ namespace libsmpp
 		boost::shared_ptr<CSMPPUserManager>        m_userManager;
 	};
 
-} // namespace libsmpp
+} // namespace opensmpp
 
-#endif // smppserver_h__
+#endif // OPENSMPP_SMPPSERVER_HPP_

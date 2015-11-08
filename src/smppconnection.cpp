@@ -4,8 +4,8 @@
  */
 #include "stdafx.h"
 
-#include "smppconnection.h"
-#include "smppcommands.h"
+#include "smppconnection.hpp"
+#include "smppcommands.hpp"
 #include "logger.h"
 #include <boost/lexical_cast.hpp>
 #include <boost/make_shared.hpp>
@@ -68,7 +68,7 @@
 using namespace std;
 using namespace boost;
 
-namespace libsmpp
+namespace opensmpp
 {
 
 
@@ -469,4 +469,4 @@ CSMPPServerConnection::~CSMPPServerConnection()
 	SMPP_TRACE();
 }
 
-} // namespace libsmpp
+} // namespace opensmpp

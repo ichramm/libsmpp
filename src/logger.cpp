@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "logger.h"
 
-#include "../libsmpp.h"
+#include "../smpp.h"
 
 #include <boost/make_shared.hpp>
 #include <boost/thread.hpp>

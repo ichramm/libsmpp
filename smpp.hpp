@@ -1,11 +1,11 @@
 /*!
- * \file libsmpp.hpp
+ * \file smpp.hpp
  * \author ichramm
- * 
+ *
  * This header exposes the C++ API
  */
-#ifndef libsmpp_hpp__
-#define libsmpp_hpp__
+#ifndef OPENSMPP_SMPP_HPP__
+#define OPENSMPP_SMPP_HPP__
 #if _MSC_VER > 1000
 #pragma once
 #endif
@@ -21,7 +21,7 @@
 #endif
 
 // include the C API
-#include "libsmpp.h"
+#include "smpp.h"
 
 #include <boost/shared_ptr.hpp>
 #include <boost/scoped_ptr.hpp>
@@ -29,7 +29,7 @@
 #include <string>
 #include <vector>
 
-namespace libsmpp
+namespace opensmpp
 {
 	/*!
 	* \brief This class must be implemented by the user, each method speaks by it self
@@ -302,7 +302,7 @@ namespace libsmpp
 		boost::scoped_ptr<impl> pimpl;
 	};
 
-} //namespace libsmpp
+} //namespace opensmpp
 
 #ifdef _WIN32
 # pragma pop_macro("SendMessage")
@@ -312,4 +312,4 @@ namespace libsmpp
 # pragma warning(pop)  	// restore original warning level
 #endif
 
-#endif // libsmpp_hpp__
+#endif // OPENSMPP_SMPP_HPP__

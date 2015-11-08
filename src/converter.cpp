@@ -5,7 +5,7 @@
  * Created on December 5, 2010, 1:14 AM
  */
 #include "stdafx.h"
-#include "converter.h"
+#include "converter.hpp"
 #include "smppdefs.h"
 #include "iconv/gsm7.h"
 #include "logger.h"
@@ -147,7 +147,7 @@ public:
 } // namespace
 
 
-namespace libsmpp
+namespace opensmpp
 {
 
 CConverter::CConverter(const std::string &charsetFrom, const std::string &charsetTo)
@@ -258,7 +258,7 @@ const char *CConverter::GetCharsetFromDataCoding(unsigned char data_coding)
 	return "GSM7";
 }
 
-} // namespace libsmpp
+} // namespace opensmpp
 
 
 /*static*/

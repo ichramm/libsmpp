@@ -5,11 +5,11 @@
  * Created on November 19, 2011, 12:17 AM
  */
 #include "stdafx.h"
-#include "../libsmpp.hpp"
+#include "../smpp.hpp"
 
-#include "smppconnection.h"
-#include "smppcommands.h"
-#include "converter.h"
+#include "smppconnection.hpp"
+#include "smppcommands.hpp"
+#include "converter.hpp"
 #include "logger.h"
 
 #include <boost/make_shared.hpp>
@@ -30,7 +30,7 @@ using namespace boost;
 
 #define CLIENT_THREAD_COUNT   ((unsigned int)2)
 
-namespace libsmpp
+namespace opensmpp
 {
 
 class ClientThread
@@ -566,7 +566,7 @@ void CSMPPClient::SetClientThreads(unsigned int count)
 	ClientThread::GetInstance()->SetThreads(count);
 }
 
-} // namespace libsmpp
+} // namespace opensmpp
 
 #ifdef _WIN32
 # pragma pop_macro("SendMessage")

@@ -20,8 +20,8 @@
  * Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
  */
-#ifndef _STB_H_
-#define _STB_H_
+#ifndef OPENSMPP_LIBSMPP34_SMPP34_STRUCTS_H__
+#define OPENSMPP_LIBSMPP34_SMPP34_STRUCTS_H__
 
 #define SMALL_BUFF      30
 /* Identify PDUs ident ********************************************************/
@@ -267,4 +267,4 @@ int smpp34_unpack(uint32_t type, void* tt, uint8_t *ptrBuf, int ptrLen);
 }
 #endif
 
-#endif /* _STB_H_ */
+#endif // OPENSMPP_LIBSMPP34_SMPP34_STRUCTS_H__

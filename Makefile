@@ -1,9 +1,11 @@
-PROJECT_NAME=smpp
-VERSION=0.9.0
+PROJECT_NAME=opensmpp
+VERSION=0.9.1
 
 CPPC   =g++
 CC     =gcc
 LINKER =g++
+
+PREFIX ?= /usr/local
 
 ROOT_DIR = .
 SRC_DIR = $(ROOT_DIR)/src
@@ -12,7 +14,7 @@ OUTPUT_DIR ?=build/lib
 ifeq ($(origin OBJS_ROOT), undefined)
 	OBJS_ROOT=build/objs
 else
-	OBJS_ROOT:=$(OBJS_ROOT)/smpplib
+	OBJS_ROOT:=$(OBJS_ROOT)/opensmpp
 endif
 
 Configuration ?= Release
@@ -40,10 +42,10 @@ else
 endif
 
 OUTPUT_FILE =$(OUTPUT_DIR)/$(OUTPUT_LIB)
-LDFLAGS:=$(LDFLAGS) -Wl,-soname,lib$(PROJECT_NAME).so
+LDFLAGS:=$(LDFLAGS) -Wl,-soname,$(OUTPUT_LIB)
 
 OBJS = $(OBJS_DIR)/converter.o \
-       $(OBJS_DIR)/libsmpp.o \
+       $(OBJS_DIR)/smpp.o \
        $(OBJS_DIR)/logger.o \
        $(OBJS_DIR)/smppconnection.o \
        $(OBJS_DIR)/smppserver.o \
@@ -74,20 +76,20 @@ $(OBJS_DIR)/%.o : $(SRC_DIR)/libsmpp34/%.c
 $(OBJS_DIR)/%.o : $(SRC_DIR)/iconv/%.c
 	$(CCOMPILE)
 
-$(SRC_DIR)/smppconnection.cpp: $(SRC_DIR)/smppconnection.h \
-	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.h
+$(SRC_DIR)/smppconnection.cpp: $(SRC_DIR)/smppconnection.hpp \
+	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.hpp
 
-$(SRC_DIR)/smppserver.cpp: $(SRC_DIR)/smppserver.h \
-	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.h $(SRC_DIR)/smppconnection.h $(SRC_DIR)/smppusersmanager.h
+$(SRC_DIR)/smppserver.cpp: $(SRC_DIR)/smppserver.hpp \
+	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.hpp $(SRC_DIR)/smppconnection.hpp $(SRC_DIR)/smppusersmanager.hpp
 
-$(SRC_DIR)/smppusersmanager.cpp: $(SRC_DIR)/smppusersmanager.h \
-	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.h $(SRC_DIR)/smppconnection.h
+$(SRC_DIR)/smppusersmanager.cpp: $(SRC_DIR)/smppusersmanager.hpp \
+	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.hpp $(SRC_DIR)/smppconnection.hpp
 
-$(SRC_DIR)/smppclient.cpp: $(ROOT_DIR)/libsmpp.h $(ROOT_DIR)/libsmpp.hpp\
-	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.h $(SRC_DIR)/smppconnection.h $(SRC_DIR)/converter.h
+$(SRC_DIR)/smppclient.cpp: $(ROOT_DIR)/smpp.h $(ROOT_DIR)/smpp.hpp \
+	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppcommands.hpp $(SRC_DIR)/smppconnection.hpp $(SRC_DIR)/converter.hpp
 
-$(SRC_DIR)/libsmpp.cpp: $(ROOT_DIR)/libsmpp.h $(ROOT_DIR)/libsmpp.hpp \
-	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppusersmanager.h $(SRC_DIR)/smppserver.h
+$(SRC_DIR)/smpp.cpp: $(ROOT_DIR)/smpp.h $(ROOT_DIR)/smpp.hpp \
+	$(SRC_DIR)/smppdefs.h $(SRC_DIR)/smppusersmanager.hpp $(SRC_DIR)/smppserver.hpp
 
 $(SRC_DIR)/converter.cpp: $(SRC_DIR)/smppdefs.h
 
@@ -104,3 +106,9 @@ $(OUTPUT_DIR):
 clean:
 	rm -f -r $(OBJS_DIR)/*.o
 	rm -f "$(OUTPUT_FILE)"
+
+install: build
+	mkdir -p $(PREFIX)/include $(PREFIX)/lib
+	cp -vf smpp.{h,hpp} $(PREFIX)/include
+	cp -vf $(OUTPUT_FILE) $(PREFIX)/lib
+	cd $(PREFIX)/lib && ln -s $(OUTPUT_LIB) lib$(PROJECT_NAME).so

@@ -1,9 +1,9 @@
 /*!
- * \file smppcommands.h
+ * \file smppcommands.hpp
  * \author ichramm
  */
-#ifndef smppcommands_h_
-#define smppcommands_h_
+#ifndef OPENSMPP_SMPPCOMMANDA_HPP_
+#define OPENSMPP_SMPPCOMMANDA_HPP_
 
 #include "smppdefs.h"
 #include "libsmpp34/smpp34.h"
@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <string.h>
 
-namespace libsmpp
+namespace opensmpp
 {
 
 class ISMPPCommand : public boost::enable_shared_from_this<ISMPPCommand>
@@ -635,11 +635,11 @@ void CBindCommand<request_t, response_t>::setResponseSystemId(const std::string 
 	build_tlv(&this->_response.tlv, &tlv);
 }
 
-} // namespace libsmpp
+} // namespace opensmpp
 
 
 #if _MSC_VER > 1000
 #pragma warning(pop)  	// restore original warning level
 #endif
 
-#endif // smppcommands_h_
+#endif // OPENSMPP_SMPPCOMMANDA_HPP_

@@ -1,7 +1,7 @@
 /*!
  * \file smppusersmanager.cpp
  * \author ichramm
- * 
+ *
  * User management and PDU processing
  */
 #include "stdafx.h"
@@ -11,10 +11,10 @@
 # undef SendMessage
 #endif
 
-#include "smppusersmanager.h"
-#include "smppcommands.h"
+#include "smppusersmanager.hpp"
+#include "smppcommands.hpp"
 #include "iconv/gsm7.h"
-#include "converter.h"
+#include "converter.hpp"
 #include "logger.h"
 
 #include <boost/make_shared.hpp>
@@ -29,7 +29,7 @@
 using namespace std;
 using namespace boost;
 
-namespace libsmpp
+namespace opensmpp
 {
 
 static BindType bindtype_to_logintype(int cmd)
@@ -589,7 +589,7 @@ void CSMPPUserManager::KeepAliveThread()
 	}
 }
 
-} // namespace libsmpp
+} // namespace opensmpp
 
 #ifdef _WIN32
 # pragma pop_macro("SendMessage")

@@ -1,5 +1,5 @@
-#ifndef ICONV_H_INCLUDED
-#define ICONV_H_INCLUDED 1
+#ifndef OPENSMPP_ICONV_ICONV_H__
+#define OPENSMPP_ICONV_ICONV_H__ 1
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,4 +13,5 @@ unsigned iconv(iconv_t cd, const char **inbuf, unsigned *inbytesleft, char **out
 #ifdef __cplusplus
 }
 #endif
-#endif
+
+#endif // OPENSMPP_ICONV_ICONV_H__
