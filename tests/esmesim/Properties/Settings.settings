@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="esmesim.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">juan</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3com</Value>
+    </Setting>
+    <Setting Name="ServerAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.21.169</Value>
+    </Setting>
+    <Setting Name="ServerPort" Type="System.UInt16" Scope="User">
+      <Value Profile="(Default)">9090</Value>
+    </Setting>
+    <Setting Name="AddressRange" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8888,9999</Value>
+    </Setting>
+    <Setting Name="SystemType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SMS</Value>
+    </Setting>
+    <Setting Name="BindMode" Type="esmesim.BindMode" Scope="User">
+      <Value Profile="(Default)">Receiver</Value>
+    </Setting>
+    <Setting Name="LastPhoneNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DataCoding" Type="esmesim.DataCoding" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+    <Setting Name="Gsm7bitPacking" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ServerDataCoding" Type="esmesim.DataCoding" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
